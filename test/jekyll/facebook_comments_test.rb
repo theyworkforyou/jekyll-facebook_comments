@@ -5,7 +5,15 @@ class Jekyll::FacebookCommentsTest < Minitest::Test
     refute_nil ::Jekyll::FacebookComments::VERSION
   end
 
-  def test_it_does_something_useful
-    assert false
+  def test_rendering_sdk
+    sdk = File.read(File.expand_path('../../../templates/facebook_javascript_sdk.html', __FILE__))
+    out = Liquid::Template.parse('{% facebook_javascript_sdk %}').render
+    assert_equal sdk, out
+  end
+
+  def test_rendering_comment_box
+    box = Liquid::Template.parse(File.read(File.expand_path('../../../templates/facebook_comment_box.html', __FILE__))).render
+    out = Liquid::Template.parse('{% facebook_comment_box %}').render
+    assert_equal box, out
   end
 end
