@@ -1,8 +1,6 @@
 # Jekyll::FacebookComments
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jekyll/facebook_comments`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Add Facebook comment boxes to your Jekyll site.
 
 ## Installation
 
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First add this tag just after your `<body>` tag:
+
+```liquid
+{% facebook_javascript_sdk %}
+```
+
+Then drop this tag wherever you want a comment box to appear:
+
+```liquid
+{% facebook_comment_box %}
+```
 
 ## Development
 
@@ -32,10 +40,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/jekyll-facebook_comments.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/everypolitician/jekyll-facebook_comments.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
